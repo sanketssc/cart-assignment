@@ -10,7 +10,10 @@ import QuantityAdjust from "./cart/QuantityAdjust";
 
 export default async function CartCard({ cartItem }: { cartItem: CartItem }) {
   const Item = await fetch(
-    `https://fakestoreapi.com/products/${cartItem.productId}`
+    `https://fakestoreapi.com/products/${cartItem.productId}`,
+    {
+      cache: "force-cache",
+    }
   );
   const itemData: Product = await Item.json();
 
