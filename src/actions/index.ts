@@ -39,7 +39,7 @@ export async function addToCart(added: number, formData: FormData) {
   return  added;
 }
 
-export async function decreaseQuantity(decreased: boolean, formData: FormData) {
+export async function decreaseQuantity( formData: FormData) {
 
   const quantity = Number(formData.get("quantity")!);
   const id = formData.get("id")!.toString();
@@ -58,7 +58,7 @@ export async function decreaseQuantity(decreased: boolean, formData: FormData) {
   return true;
 }
 
-export async function increaseQuantity(increased: boolean, formData: FormData) {
+export async function increaseQuantity( formData: FormData) {
   const quantity = Number(formData.get("quantity")!);
   const id = formData.get("id")!.toString();
   console.log(quantity, id);

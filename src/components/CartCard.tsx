@@ -7,6 +7,7 @@ import { Cart } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import QuantityAdjust from "./cart/QuantityAdjust";
+import { Delete, Trash2 } from "lucide-react";
 
 export default async function CartCard({ cartItem }: { cartItem: CartItem }) {
   const Item = await fetch(
@@ -33,10 +34,21 @@ export default async function CartCard({ cartItem }: { cartItem: CartItem }) {
             <p className="text-sm text-gray-500">{itemData.category}</p>
           </div>
         </div>
+        <div>
+          <form>
+            <Button
+              variant={"destructive"}
+              formAction={async (formData) => {
+                "use server";
+                await db.delete(Cart).where(eq(Cart.id, cartItem.id));
+                revalidatePath("/cart");
+              }}
+            >
+              <Trash2 />
+            </Button>
+          </form>
+        </div>
         <div className="flex flex-col items-center">
-          <div className="text-lg font-bold mr-2">
-            $ {(itemData.price * cartItem.quantity).toFixed(2)}
-          </div>
           <QuantityAdjust cartItem={cartItem} itemData={itemData} />
         </div>
       </div>

@@ -35,6 +35,9 @@ dependencies:
   lucia:
     specifier: ^3.2.0
     version: 3.2.0
+  lucide-react:
+    specifier: ^0.428.0
+    version: 0.428.0(react@19.0.0-rc-f994737d14-20240522)
   next:
     specifier: 15.0.0-rc.0
     version: 15.0.0-rc.0(react-dom@19.0.0-rc-f994737d14-20240522)(react@19.0.0-rc-f994737d14-20240522)
@@ -3291,6 +3294,14 @@ packages:
     resolution: {integrity: sha512-eXMxXwk6hqtjRTj4W/x3EnTUtAztLPm0p2N2TEBMDEbakDLXiYnDQ9z/qahjPdPdhPguQc+vwO0/88zIWxlpuw==}
     dependencies:
       oslo: 1.2.0
+    dev: false
+
+  /lucide-react@0.428.0(react@19.0.0-rc-f994737d14-20240522):
+    resolution: {integrity: sha512-rGrzslfEcgqwh+TLBC5qJ8wvVIXhLvAIXVFKNHndYyb1utSxxn9rXOC+1CNJLi6yNOooyPqIs6+3YCp6uSiEvg==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
+    dependencies:
+      react: 19.0.0-rc-f994737d14-20240522
     dev: false
 
   /memfs-browser@3.5.10302:
