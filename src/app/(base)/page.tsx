@@ -30,7 +30,7 @@ export default async function Home() {
   return (
     <div className="w-full mx-auto">
       <div className="flex items-center justify-between px-10">
-        <h1 className="text-4xl text-center font-bold my-4">Shopping -</h1>
+        <h1 className="text-4xl text-center font-bold my-4">Shopping</h1>
         <Link href={"/cart"}>
           <Button variant={"default"} className="flex gap-2">
             <ShoppingCart /> {totalItems}
