@@ -5,6 +5,9 @@ import { db } from "@/db";
 import { eq } from "drizzle-orm";
 import { validateRequest } from "@/auth";
 import { redirect } from "next/navigation";
+import { ShoppingCart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default async function Home() {
   const shoppingData = await fetch("https://fakestoreapi.com/products", {
@@ -26,9 +29,14 @@ export default async function Home() {
 
   return (
     <div className="w-full mx-auto">
-      <h1 className="text-4xl text-center font-bold my-4">
-        Shopping - {totalItems}
-      </h1>
+      <div className="flex items-center justify-between px-10">
+        <h1 className="text-4xl text-center font-bold my-4">Shopping -</h1>
+        <Link href={"/cart"}>
+          <Button variant={"default"} className="flex gap-2">
+            <ShoppingCart /> {totalItems}
+          </Button>
+        </Link>
+      </div>
       <div className="w-full lg:max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-2">
         {data.map((item) => {
           return (
