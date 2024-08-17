@@ -8,7 +8,6 @@ import { redirect } from "next/navigation";
 
 export default async function Home() {
   const shoppingData = await fetch("https://fakestoreapi.com/products", {
-    next: { revalidate: false },
     cache: "force-cache",
   });
   const data: Product[] = await shoppingData.json();
