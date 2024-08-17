@@ -30,7 +30,7 @@ export default async function CartPage() {
 
   return (
     <div className="w-full mx-auto flex flex-col items-center gap-2 ">
-      <div className="w-4/5 flex items-center justify-between px-10">
+      <div className="w-4/5 flex items-center justify-between sm:px-10">
         <Link href={"/"}>
           <Button variant={"link"}>
             <ArrowBigLeft />
